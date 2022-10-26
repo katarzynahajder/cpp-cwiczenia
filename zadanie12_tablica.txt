@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+class tablica_obiektowa
+{
+	public:
+		int x, suma=0, tab[10][10];
+		void czytaj_dane()
+		{	
+		    cout<<"Podaj rozmiar kwadratowej tablicy (1-10): ";
+		    cin>>x;
+			for(int i=0; i<10; i++)
+			{
+				for(int j=0; j<10; j++)
+				{
+					if(i==j)tab[i][j]=j+1;
+					else tab[i][j]=0;
+				}
+			}
+		}
+		void przetworz_dane()
+		{
+			for(int i=0; i<x; i++)
+			{
+				suma+=tab[i][i];
+			}
+			cout<<"Suma elementow na przekatnej wynosi: "<<suma<<endl;
+		}
+		void wyswietl_wynik()
+		{
+			cout<<"Zawartosc tablicy: "<<endl;
+			for(int i=0; i<x; i++)
+			{
+				for(int j=0; j<x; j++)
+				{
+					cout<<tab[i][j]<<"  ";
+				}
+				cout<<"\n";
+			}
+		}
+};
+int main() 
+{
+	tablica_obiektowa tablica;
+	
+	tablica.czytaj_dane();
+	tablica.przetworz_dane();
+	tablica.wyswietl_wynik();
+		
+	return 0;
+}

@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+class Pole
+{
+	private:
+		float podstawa_a, wysokosc_h;
+	public:
+		Pole()
+		{
+			podstawa_a=8;
+			wysokosc_h=6;
+		}
+		Pole(float a, float h)
+		{
+			podstawa_a=a;
+			wysokosc_h=h;
+		}
+		wyrazenie()
+		{
+			return (podstawa_a*wysokosc_h)/2;
+		}
+		void rozwiazanie(float temp)
+		{
+			cout<<"Pole wynosi: "<<temp<<endl;
+		}
+};
+int main() 
+{
+	Pole obiekt1, obiekt2(6, 4);
+	float temp;
+	temp=obiekt1.wyrazenie();
+	obiekt1.rozwiazanie(temp);
+	temp=obiekt2.wyrazenie();
+	obiekt2.rozwiazanie(temp);
+	
+	return 0;
+}

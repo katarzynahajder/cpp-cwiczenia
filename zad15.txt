@@ -1,0 +1,114 @@
+#include <iostream>
+using namespace std;
+class Notes
+{
+	public:
+		string nazwa, opis, data;
+		int waznosc;
+		
+	Notes()
+	{
+		nazwa="nowa";
+		opis="nowa";
+		data="05.02.2021";
+		waznosc=1;
+	}
+	void dodaj()
+	{
+		cout<<"Wprowadz nazwe notatki: ";
+		cin>>nazwa;
+		cout<<"Podaj date: ";
+		cin>>data;
+		cout<<"Jaki ma miec opis: ";
+		cin.ignore();
+		getline(cin, opis);
+		cout<<"Okresl stopien waznosci notatki (1-3): ";
+		cin>>waznosc;
+	}
+	void wypisz()
+	{
+		cout<<"\n**************** NOTES ****************"<<endl;
+		cout<<nazwa<<" ("<<waznosc<<")"<<"                    "<<data<<endl;
+		cout<<opis<<endl;
+	}
+};
+int main() 
+{
+	int x, ilosc;
+	string odp;
+	Notes Andrzej, Ola, Eryka;
+	cout<<"Czyj notes chcesz otworzyc? Andrzeja-1, Oli-2 czy Eryki-3: ";
+	cin>>x;
+	
+	switch(x)
+	{
+		case 1:
+		    cout<<"Ile notatek dla Andrzeja chcesz zapisac: ";
+		    cin>>ilosc;
+		    for(int i=0; i<ilosc; i++)
+		    {
+		        cout<<"\nNOTATKA "<<i+1<<endl;
+		        cout<<"Jesli chcesz ja jeszcze edytowac, wpisz 'edytuj', jesli chcesz ja od razu zobaczyc, wpisz 'zobacz': ";
+			    cin>>odp;
+			    if(odp=="edytuj")
+			    {
+			        Andrzej.dodaj();
+			        Andrzej.wypisz();
+			    }
+			    else if(odp=="zobacz"&&i>1)
+			    {
+			        cout<<"\n**************** NOTES ****************"<<endl;
+		            cout<<"nowa (1)"<<"                    "<<"05.02.2021"<<endl;
+		            cout<<"nowa"<<endl;
+			    }
+			    else if(odp=="zobacz")Andrzej.wypisz();
+		    }
+			break;
+		case 2:
+			cout<<"Ile notatek dla Oli chcesz zapisac: ";
+		    cin>>ilosc;
+		    for(int i=0; i<ilosc; i++)
+		    {
+		        cout<<"\nNOTATKA "<<i+1<<endl;
+		        cout<<"Jesli chcesz ja jeszcze edytowac, wpisz 'edytuj', jesli chcesz ja od razu zobaczyc, wpisz 'zobacz': ";
+			    cin>>odp;
+			    if(odp=="edytuj")
+			    {
+			        Ola.dodaj();
+			        Ola.wypisz();
+			    }
+			    else if(odp=="zobacz"&&i>1)
+			    {
+			        cout<<"\n**************** NOTES ****************"<<endl;
+		            cout<<"nowa (1)"<<"                    "<<"05.02.2021"<<endl;
+		            cout<<"nowa"<<endl;
+			    }
+			    else if(odp=="zobacz")Ola.wypisz();
+		    }
+			break;
+		case 3:
+			cout<<"Ile notatek dla Eryki chcesz zapisac: ";
+		    cin>>ilosc;
+		    for(int i=0; i<ilosc; i++)
+		    {
+		        cout<<"\nNOTATKA "<<i+1<<endl;
+		        cout<<"Jesli chcesz ja jeszcze edytowac, wpisz 'edytuj', jesli chcesz ja od razu zobaczyc, wpisz 'zobacz': ";
+			    cin>>odp;
+			    if(odp=="edytuj")
+			    {
+			        Eryka.dodaj();
+			        Eryka.wypisz();
+			    }
+			    else if(odp=="zobacz"&&i>1)
+			    {
+			        cout<<"\n**************** NOTES ****************"<<endl;
+		            cout<<"nowa (1)"<<"                    "<<"05.02.2021"<<endl;
+		            cout<<"nowa"<<endl;
+			    }
+			    else if(odp=="zobacz")Eryka.wypisz();
+		    }
+			break;
+	}
+	
+	return 0;
+}

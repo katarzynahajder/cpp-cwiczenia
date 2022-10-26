@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+class Glowna
+{
+	public:
+		int a=5, b=10;
+};
+class Pochodna: public Glowna
+{
+	public:
+		void wynik()
+		{
+			cout<<"Wynik wynosi: "<<a+b;
+		}
+};
+int main() 
+{
+	Pochodna obiekt1;
+	obiekt1.wynik();
+	
+	return 0;
+}

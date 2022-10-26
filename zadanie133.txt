@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+class Obliczenia
+{
+	private:
+		int krawedz;
+	public:
+		Obliczenia()
+		{
+			krawedz=6;	
+		}
+		Obliczenia(int a)
+		{
+			krawedz=a;	
+		}
+		wyrazenie()
+		{
+			return 6*krawedz*krawedz;
+		}
+		void rozwiazanie(int temp)
+		{
+			cout<<"Pole wynosi: "<<temp<<endl;
+		}
+};
+int main() 
+{
+	Obliczenia obiekt1, obiekt2(4);
+	int temp;
+	temp=obiekt1.wyrazenie();
+	obiekt1.rozwiazanie(temp);
+	temp=obiekt2.wyrazenie();
+	obiekt2.rozwiazanie(temp);
+	
+	return 0;
+}

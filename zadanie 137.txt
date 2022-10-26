@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+class Figury
+{
+	public:
+		pole_trojkata(int a, int h)
+		{
+			return (a*h)/2;
+		}
+};
+class Trojkat: Figury
+{
+	public:
+		int a, h;
+		float pole;
+		Trojkat()
+		{
+			a=3;
+			h=7;
+		}
+		void rozwiazanie()
+		{
+			pole=pole_trojkata(a, h);
+			cout<<"Pole wynosi: "<<pole;
+		}
+};
+int main() 
+{
+	Trojkat obiekt1;
+	obiekt1.rozwiazanie();
+	
+	return 0;
+}

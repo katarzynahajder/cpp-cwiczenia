@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+void funkcja(int a, int tab[])
+{
+	int b=0;
+	for(int i=0; i<30; i++)
+	{
+		if(tab[i]==a)b++;
+	}
+	if(b>0)cout<<"Taka liczba znajduje sie w tablicy.";
+	else cout<<"Podanej liczby nie ma w tablicy.";
+}
+int main() 
+{
+	srand(time(NULL));
+	int tab[30], s=31, x;
+	string odp1, odp2;
+	
+	for(int i=0; i<5; i++)
+	{
+		cout<<"Podaj "<<i+1<<". element tablicy: ";
+		cin>>tab[i];
+	}
+	
+	for(int i=5; i<30; i++)
+	{
+	    tab[i]=(rand()%294)+6;
+	    for(int j=0; j<5; j++)
+	    {
+	        if(tab[i]==tab[j])tab[i]++;
+	    }
+	}
+	
+	for(int i=0; i<s; i++)
+	{
+		for(int j=1; j<s-1; j++)
+		{
+			if(tab[j-1]>tab[j])swap(tab[j-1], tab[j]);
+		}
+	}
+	
+	cout<<"Wyszukac wartosc minimalna(min) czy maksymalna(max): ";
+	cin>>odp1;
+	
+	if(odp1=="min")cout<<"Najmniejsza liczba to: "<<tab[0];
+	else cout<<"Najwieksza liczba to: "<<tab[29];
+	
+	cout<<"\nCzy chcesz wyszukac jakas liczbe? ";
+	cin>>odp2;
+	if(odp2=="tak")
+	{
+		cout<<"Podaj szukana liczbe: ";
+		cin>>x;
+		funkcja(x, tab);
+	}
+	
+	
+	return 0;
+}

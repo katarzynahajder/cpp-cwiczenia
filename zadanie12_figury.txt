@@ -1,0 +1,71 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+class pole_figury
+{
+	public:
+		float a, b, pole;
+		int x;
+		
+		void czytaj_dane()
+		{
+			cout<<"Pole ktorej figury geometrycznej chcesz obliczyc? Kwadratu(1), prostokata(2) czy trojkata(3): ";
+			cin>>x;
+			switch(x)
+			{
+				case 1:
+					cout<<"Podaj bok kwadratu: ";
+					cin>>a;
+					p_kwadrat();
+					break;
+				case 2:
+					cout<<"Podaj bok a: ";
+					cin>>a;
+					cout<<"Podaj bok b: ";
+					cin>>b;
+					p_prostokat();
+					break;
+				case 3:
+					cout<<"Podaj wysokosc trojkata: ";
+					cin>>a;
+					cout<<"Podaj podstawe trojkata: ";
+					cin>>b;
+					p_trojkat();
+					break;
+			}
+			wyswietl_wynik();
+
+		}
+		void p_kwadrat()
+		{
+			pole=a*a;
+			
+		}
+		void p_trojkat()
+		{
+			pole=(a*b)/2;
+		}
+		void p_prostokat()
+		{
+			pole=a*b;
+		}
+		void wyswietl_wynik()
+		{
+			cout<<"Pole tej figury geometrycznej wynosi: "<<fixed<<setprecision(2)<<pole<<endl;
+		}
+};
+int main() 
+{
+	string odp;
+	pole_figury figura;
+	
+	for(;;)
+	{
+		figura.czytaj_dane();
+		cout<<"Jesli chcesz zakonczyc prace programu wpisz 'exit', w innym wypadku wpisz 'kontynuuj': ";
+		cin>>odp;
+		if(odp=="exit")break;
+	}
+	
+	return 0;
+}
